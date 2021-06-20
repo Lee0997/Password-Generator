@@ -24,24 +24,23 @@ characterNumber.value = value
 characterRange.value = value
 }
 
-
 characterRange.addEventListener("input", syncCharacterAmount)
 characterNumber.addEventListener("input", syncCharacterAmount)
 
 form.addEventListener("submit", e => {
     e.preventDefault()
-    var includeNumbers = characterNumber.checked
+    var includeNumbers = characterNumbers.checked
     var includeSymbols = characterSymbols.checked
     var includeUppercase = characterUppercase.checked
     var characterAmount = characterNumber.value
     var password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols)
-    passDisplay.innertext = password
+    passDisplay.textContent = password
 })
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols) {
     let charCodes = lowerCaseCodes
     if (includeUppercase) charCodes = charCodes.concat(upperCaseCodes)
-    if (includeNumbers) charCodes = charCodes.concat(characterNumbers)
+    if (includeNumbers) charCodes = charCodes.concat(numberCaseCodes)
     if (includeSymbols) charCodes = charCodes.concat(characterSymbols)
 
     var passwordCharacters = []

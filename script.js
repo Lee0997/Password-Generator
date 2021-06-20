@@ -41,7 +41,7 @@ function generatePassword(characterAmount, includeUppercase, includeNumbers, inc
     let charCodes = lowerCaseCodes
     if (includeUppercase) charCodes = charCodes.concat(upperCaseCodes)
     if (includeNumbers) charCodes = charCodes.concat(numberCaseCodes)
-    if (includeSymbols) charCodes = charCodes.concat(characterSymbols)
+    if (includeSymbols) charCodes = charCodes.concat(symbolCaseCodes)
 
     var passwordCharacters = []
     for(let i = 0; i < characterAmount; i++) {
